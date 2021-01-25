@@ -50,4 +50,3 @@ We can view the preview side-by-side with the file you are editing and see chang
 _Will be updating the readme file when I learn more._
 
 Thank You
-st121775
