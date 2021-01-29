@@ -43,12 +43,12 @@
                     </c:forEach> -->
                     <tr class="table-light">
                         <td scope="row">1</td>
-                        <td>Suyogya Ratna</td>
+                        <td>Younten</td>
                         <td>Male</td>
                         <td>AIT</td>
-                        <td>24000</td>
-                        <td>10000</td>
-                        <td>14000</td>
+                        <td>12000</td>
+                        <td>111000</td>
+                        <td>99000</td>
                         <td>
                             <div class="row">
                                 <form action="edit" method="GET">
@@ -65,12 +65,12 @@
 
                     <tr class="table-light">
                         <td scope="row">1</td>
-                        <td>Suyogya Ratna</td>
-                        <td>Male</td>
-                        <td>AIT</td>
-                        <td>24000</td>
-                        <td>10000</td>
-                        <td>14000</td>
+                        <td>Sonam</td>
+                        <td>Female</td>
+                        <td>Bhutan</td>
+                        <td>9000</td>
+                        <td>9000</td>
+                        <td>0</td>
                         <td>
                             <div class="row">
                                 <form action="edit" method="GET">
@@ -87,12 +87,12 @@
 
                     <tr class="table-light">
                         <td scope="row">1</td>
-                        <td>Suyogya Ratna</td>
-                        <td>Male</td>
-                        <td>AIT</td>
-                        <td>24000</td>
-                        <td>10000</td>
-                        <td>14000</td>
+                        <td>Sam</td>
+                        <td>Female</td>
+                        <td>England</td>
+                        <td>1000</td>
+                        <td>2000</td>
+                        <td>1000</td>
                         <td>
                             <div class="row">
                                 <form action="edit" method="GET">
@@ -109,12 +109,12 @@
 
                     <tr class="table-light">
                         <td scope="row">1</td>
-                        <td>Suyogya Ratna</td>
-                        <td>Male</td>
-                        <td>AIT</td>
-                        <td>24000</td>
-                        <td>10000</td>
-                        <td>14000</td>
+                        <td>Jo</td>
+                        <td>Female</td>
+                        <td>High Land</td>
+                        <td>12000</td>
+                        <td>1000</td>
+                        <td>-11000</td>
                         <td>
                             <div class="row">
                                 <form action="edit" method="GET">
@@ -131,12 +131,12 @@
 
                     <tr class="table-light">
                         <td scope="row">1</td>
-                        <td>Suyogya Ratna</td>
+                        <td>Sad</td>
                         <td>Male</td>
-                        <td>AIT</td>
-                        <td>24000</td>
-                        <td>10000</td>
-                        <td>14000</td>
+                        <td>Japan</td>
+                        <td>18000</td>
+                        <td>9000</td>
+                        <td>-9000</td>
                         <td>
                             <div class="row">
                                 <form action="edit" method="GET">

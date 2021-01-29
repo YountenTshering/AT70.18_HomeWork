@@ -114,6 +114,8 @@ After the user actions, properly format the code (shift + alt +F) and do not for
 
 ---
 ># Output of the lab1 assignment:
+For this lab work, I have additional included the adding of employee interface and some of the work not finished are like I could not genenrate the list of employees. If I can list the employees then I would be able to edit and delect from the table row shown in my home page with edit and delete icon or button.
+
 
 
 >### For more details, check the commment code.
