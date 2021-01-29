@@ -33,7 +33,6 @@ public class UserController {
 	@RequestMapping(path = "/addUser", method = RequestMethod.GET)
 	public String addUser(User user) {
 		dao.save(user);
-
 		// redirect to home
 		return "home.jsp";
 	}
@@ -53,39 +52,36 @@ public class UserController {
 		return mv;
 	}
 
-//part 1 restful calls using dao
 
+//part 1 restful calls using dao
 	// RESTFUL GET ALL, USING CrudeRepo which returns java object
 	@RequestMapping(path = "/users", method = RequestMethod.GET) // RESTful protocol for get all employees
 	@ResponseBody // this annotation is for REST methods where view will not be rendered
-	// Note that if you don't want to write @reponsebody, you can use
-	// @RestController above instead of @Controller, but then you cannot return a
-	// view
+
 	public String getUsersREST() {
 		return dao.findAll().toString();
 
 	}
 
-	@RequestMapping(path = "/user/{eid}", method = RequestMethod.GET) // RESTful protocol for get some wildcard
-																			// employee with given eid
+	// RESTFUL GET ONE, USING CrudeRepo which returns java object
+	@RequestMapping(path = "/user/{eid}", method = RequestMethod.GET) // RESTful protocol for get some wildcard employee with given eid
 	@ResponseBody // this annotation is for REST methods where view will not be rendered
 	public String getUserREST(@PathVariable("eid") int eid) {
 		return dao.findById(eid).toString();
 
 	}
-	// RESTFUL GET ONE, USING CrudeRepo which returns java object
+	
 
 
 //part 2 restful calls jpaDao
-	
-
 	// RESTFUL GET (ALL) USING JPA
 	// You can restrict to only json/xml format by using the "produces" parameter
 	@RequestMapping(path = "/usersJPA", method = RequestMethod.GET, produces = "application/json") // , produces= {"application/xml"}) //RESTful +
-																	// return JSON protocol for get all employees
+	// return JSON protocol for get all employees
+	
 	@ResponseBody // this annotation is for REST methods where view will not be rendered
-	// This one uses jackson library (maven dependencies) to convert java object to
-	// json
+	// This one uses jackson library (maven dependencies) to convert java object to json
+	
 	public List<User> getUsersRESTJPA() {
 		return jpaDao.findAll();
 	}
@@ -93,10 +89,8 @@ public class UserController {
 	// RESTFUL GET ONE USING JPA
 	@RequestMapping(path = "/userJPA/{eid}", method = RequestMethod.GET, produces = "application/json")																										//																						// given eid
 	@ResponseBody // this annotation is for REST methods where view will not be rendered
-	// Optional here means that it will return Employee, but if in case it does not
-	// exist, it will return optional data
-	// This one uses jackson library (maven dependencies) to convert java object to
-	// json
+	// Optional here means that it will return Employee, but if in case it does not exist, it will return optional data
+	
 	public Optional<User> getUserRESTJPA(@PathVariable("eid") int eid) {
 		return jpaDao.findById(eid);
 
@@ -105,11 +99,10 @@ public class UserController {
 	// RESTFUL POST USING JPA
 	// Instead of RequestMapping, you can also use PostMapping
 	// By default, RequestMapping is GetMapping
-	// use consumes if you only want to accept some data type
+	
 	@RequestMapping(path = "/userJPA", method = RequestMethod.POST) // , consumes = {"application/json"})
 	@ResponseBody // this annotation is for REST methods where view will not be rendered
-	// RequestBody is used so we can also send using raw format, aside from form
-	// format
+	// RequestBody is used so we can also send using raw format, aside from form format
 	public User postUser(@RequestBody User user) {
 		jpaDao.save(user);
 		return user;
@@ -120,8 +113,7 @@ public class UserController {
 	// for dao, the repository class has delete function
 	@RequestMapping(path = "/userJPA/{eid}", method = RequestMethod.DELETE) // , consumes = {"application/json"})
 	@ResponseBody // this annotation is for REST methods where view will not be rendered
-	// RequestBody is used so we can also send using raw format, aside from form
-	// format
+	// RequestBody is used so we can also send using raw format, aside from form format
 	public String deleteUser(@PathVariable("eid") int uid) {
 		User user = jpaDao.getOne(uid);
 		jpaDao.delete(user);
@@ -132,8 +124,8 @@ public class UserController {
 	// will update if exist, otherwise create
 	@RequestMapping(path = "/userJPA", method = RequestMethod.PUT) // , consumes = {"application/json"})
 	@ResponseBody // this annotation is for REST methods where view will not be rendered
-	// RequestBody is used so we can also send using raw format, aside from form
-	// format
+	// RequestBody is used so we can also send using raw format, aside from form format
+	
 	public String saveOrUpdateEmployee(@RequestBody User user) {
 		jpaDao.save(user);
 		return "updated";
