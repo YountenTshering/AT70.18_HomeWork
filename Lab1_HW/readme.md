@@ -28,7 +28,7 @@ Similarity, add jackson dataformat xml dependency to your pom.xml file.
 **(make sure the version matches to your jackson-core inside the Maven dependencies folder).** 
 This dependency allows our RESTful API to work with XML, instead of only json files._
 
-![alt](./pic/2.PNG)
+![alt](/pic/2.PNG)
 
 **Note:
 After this properly format the code (shift + alt +F) and do not forget to save file.**
