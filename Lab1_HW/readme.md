@@ -114,8 +114,27 @@ After the user actions, properly format the code (shift + alt +F) and do not for
 
 ---
 ># Output of the lab1 assignment:
-For this lab work, I have additional included the adding of employee interface and some of the work not finished are like I could not genenrate the list of employees. If I can list the employees then I would be able to edit and delect from the table row shown in my home page with edit and delete icon or button.
+For this lab work, I have additional included the adding of employee interface and some of the work not finished are like _I could not genenrate the list of employees. If I can list the employees then I would be able to edit and delect from the table row shown in my Main page with edit and delete icon or button._
 
+Following are the interfaces made and it's details:
+
+* Main page of the application, where we can view the list of employee and see three icon or button to add or edit or delete employee.
+
+![alt](./pic/10.PNG)
+
+* Form to add the employee with dropdown function to input  the level of employee bewteen 1-4.
+
+![alt](./pic/11.PNG)
+![alt](./pic/12.PNG)
+
+* Interface just before the adding of employee and showing the h2-console to verify the insertion. 
+
+![alt](./pic/13.PNG)
+![alt](./pic/14.PNG)
+
+* Form to edit the details of employee and updating it.
+
+![alt](./pic/16.PNG)
 
 
 >### For more details, check the commment code.
