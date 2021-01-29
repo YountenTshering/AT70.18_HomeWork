@@ -125,7 +125,7 @@ Following are the interfaces made and it's details:
 * Form to add the employee with dropdown function to input  the level of employee bewteen 1-4.
 
 ![alt](./pic/11.PNG)
-![alt](./pic/12.PNG)
+![alt](./pic/17.PNG)
 
 * Interface just before the adding of employee and showing the h2-console to verify the insertion. 
 
