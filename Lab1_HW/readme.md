@@ -37,6 +37,7 @@ This dependency allows our RESTful API to work with XML, instead of only json fi
 >>Inside src/main/java
 
 1. Create a 3 package (name such as model, deo and controller)
+
 ![alt](./pic/1.1.PNG) 
 
 2. Inside model package, create a model called User.java with fields of uid, name, and nationality; create setters/getters; and toString
