@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class EmployeeController {
@@ -25,12 +26,14 @@ public class EmployeeController {
     private static final String EDIT_EMPLOYEE_SCREEN = "edit.jsp";
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String home() {
+    public ModelAndView home() {
+        ModelAndView mv= new ModelAndView(HOME_SCREEN);
         // Show all users list in homepage
         List<Employee> employeeList = dao.findAll();
+        mv.addObject("employeeList", employeeList);
         System.out.println(employeeList);
 
-        return HOME_SCREEN;
+        return mv;
     }
 
     @RequestMapping(path = "/list", method = RequestMethod.GET)
@@ -56,12 +59,12 @@ public class EmployeeController {
 
     // Add Employee to DB
     @RequestMapping(path="/employee", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    @ResponseBody
-    public String addNewEmployee(Employee emp) {
+    public ModelAndView addNewEmployee(Employee emp) {
+        ModelAndView mv= new ModelAndView(HOME_SCREEN);
         dao.save(emp);
         System.out.println("Employee added. Returning to Homepage");
         // Show home screen once added
-        return HOME_SCREEN;
+        return mv;
     }
 
     // Edit or Add Employee to DB

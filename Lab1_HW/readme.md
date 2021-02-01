@@ -137,4 +137,4 @@ Following are the interfaces made and it's details:
 ![alt](./pic/16.PNG)
 
 
->### For more details, check the commment code.
+>### For more details, check the comment code.
