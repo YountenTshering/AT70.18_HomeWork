@@ -114,7 +114,19 @@ After the user actions, properly format the code (shift + alt +F) and do not for
 
 ---
 ># Output of the lab1 assignment:
-For this lab work, I have additional included the adding of employee interface and some of the work not finished are like _I could not genenrate the list of employees. If I can list the employees then I would be able to edit and delect from the table row shown in my Main page with edit and delete icon or button._
+For this lab work, I have additional included the adding of employee interface and to genenrate the list of employees we have add the following:
+
+1. JSTL from MVN and add in pom.xml as dependency
+![alt](./pic/18.PNG)
+
+2. Add the following code in jsp file(home.jsp)
+ 
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+![alt](./pic/19.PNG)
+
+![alt](./pic/20.PNG)
+
 
 Following are the interfaces made and it's details:
 
