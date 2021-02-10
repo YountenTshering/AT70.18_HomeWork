@@ -51,7 +51,43 @@ spring.datasource.url = jdbc:h2:mem:mydb
 
 _The above code will allow the program to access a in-memory database called h2._
 
-### Now we are ready to try patterns.
+### Design Pattern are of three different categories namely:
 
+**Creational**
+- Provide a way to create objects while hiding the creation logic.
 
+**Structural**
+- Concern Class and object composition
 
+**Behavioral**
+- Concern with communication between objects
+## Now we are ready to try patterns.
+
+> #### i. BUILDER
+
+Before this we should have created a package to hold model and user.java.
+There are two methods:
+a. Without lombok
+b. With Lombok
+
+Here, I have implemented method with Lombok since we notice that User.java has many “boilerplate” code, and we can make it more clean by using Lombok.
+
+To make use of Lombok, put annotation of @Builder to User.java class.  
+
+This will automatically generate builder function, as well as constructor.
+If you require getters and setters, you can also put @Getter and @Setter.  
+
+![alt](./image/8.png)
+
+To demonstrate it work, Create BuilderController.java.  
+Create function getUser1() and use User.builder() which is created automatically by lombok
+
+![alt](./image/9.png)
+
+Try it with postman to see the output:
+
+![alt](./image/10.png)
+
+Terminal output:
+
+![alt](./image/11.png)
