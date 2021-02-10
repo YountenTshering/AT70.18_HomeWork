@@ -8,18 +8,18 @@ Add the following dependencies:
 3.	jpa
 4.	lombok (builder)
 
-![alt](image/1.png)
+![alt](./image/1.png)
 
 Lombok is a handy dependency for giving you the ability to get setters and getters, without getting any boilerplate code.
 
 _**To install lombok in VSCode, add from Extension not by downloading and installing.**_
-![alt](image/2.png)
+![alt](./image/2.png)
 
 Then add this dependency into your pom.xml.  
 * Search maven repositories for lombok - make sure to use the same version as your lombok.jar. Paste the dependency into the pom.xml
 * Similarly, do it for tomcat jasper and jackson dataformat xml 
 
-![alt](image/3.png)
+![alt](./image/3.png)
 
 For more details, check the link given below and follow the readme file till step 2.
 https://github.com/YountenTshering/AT70.18_HomeWork/tree/master/Lab1_Finish%20the%20guide
@@ -41,7 +41,7 @@ _Remember Model is basically a code representation of your database table/schema
 
 Create a sql file called data.sql with several insert queries of users.
 
-![alt](image/4.png)
+![alt](./image/4.png)
 
 > Inside application.properties, put the followings:
 
