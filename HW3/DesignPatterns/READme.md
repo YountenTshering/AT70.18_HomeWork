@@ -91,3 +91,26 @@ Try it with postman to see the output:
 Terminal output:
 
 ![alt](./image/11.png)
+
+>#### ii. FACTORY
+A. Under the model package, create a Role.java interface.  
+![alt](./image/12.png)
+
+B. Next, create some concrete role Admin.java and Member.java
+![alt](./image/13.png)
+![alt](./image/14.png)
+
+C. Under the model package, create the factory RoleFactory.java that handles the creation
+![alt](./image/15.png)
+
+D. Last, under the controller package, create FactorController.java
+![alt](./image/16.png)
+
+E.Test the factory by running the Spring Boot, and test using the postman.  After clicking “Send”, you will receive the response inside the postman
+![alt](./image/17.png)
+
+![alt](./image/19.png)
+
+
+F.The console output with both admin and member after postman:
+![alt](./image/20.png)
