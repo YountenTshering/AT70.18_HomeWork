@@ -213,3 +213,24 @@ G. Lastly, create a Main.java as follow:
 H. Run the Main program and see the output like below when its "Mage"
 
 ![alt](./image/40.PNG)
+># vi. STATE
+- State pattern is useful when maintaining an entity contains multiple transitions between states
+- Here we will explore state changes in player attributes in attack, defense, and agility
+
+Create a package to hold all related files
+
+A. First, create an interface State.java to impose the rule
+
+![alt](./image/42.PNG)
+
+B. Then, create concrete classes that implement this interface.  For simple example used is Swordman.java
+
+![alt](./image/43.PNG)
+
+C. Create main program Main.java to demonstrate state changes.
+
+![alt](./image/44.PNG)
+
+D. Then, run the main.java and output will be:
+
+![alt](./image/45.PNG)
