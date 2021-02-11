@@ -141,3 +141,26 @@ D. To demonstrate, under your Main program, try the following code:
 E. After running the program, terminal or console should shows something like this at the end:
 
 ![alt](./image/27.PNG)
+
+>#### iv. CHAIN OF RESPONSIBILITY (CoR)
+
+-	CoR is excellent for handling dynamic request when the target handlers may not be known beforehand. 
+
+-	Here, we will create a dispenser for drinks, which will handle request for changing coins for 10, 5, 2, and 1 baht coins
+
+- Create a package for holding all related files
+
+A. Create a class for Currency.java
+![alt](./image/28.PNG) 
+
+B. We are almost ready to create four handlers, each for the different kinds of coins.  But before, let’s create an interface DispenseChain.java to impose some rules for these handlers
+![alt](./image/29.PNG)
+ 
+C. Now create the concrete handlers Baht10Dispenser.java, Baht1Dispenser.java, Baht2Dispenser.java, Baht5Dispenser.java and follow the code as given.
+![alt](./image/30.PNG)
+
+D. Now, let’s define the order of chain, Create the DrinkDispenseChain.java and write the Main program.
+![alt](./image/31.PNG)
+ 
+E. In VSCode, run the program or Application from Run option. Try entering different number to see output.
+![alt](./image/32.PNG)
