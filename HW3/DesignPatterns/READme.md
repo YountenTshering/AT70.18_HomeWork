@@ -63,7 +63,7 @@ _The above code will allow the program to access a in-memory database called h2.
 - Concern with communication between objects
 ## Now we are ready to try patterns.
 
-> #### i. BUILDER
+> # i. BUILDER
 
 Before this we should have created a package to hold model and user.java.
 There are two methods:
@@ -92,34 +92,39 @@ Terminal output:
 
 ![alt](./image/11.png)
 
->#### ii. FACTORY
+># ii. FACTORY
 A. Under the model package, create a Role.java interface.  
+
 ![alt](./image/12.PNG)
 
 B. Next, create some concrete role Admin.java and Member.java
+
 ![alt](./image/13.PNG)
 ![alt](./image/14.PNG)
 
 C. Under the model package, create the factory RoleFactory.java that handles the creation
+
 ![alt](./image/15.PNG)
 
 D. Last, under the controller package, create FactorController.java
+
 ![alt](./image/16.PNG)
 
 E.Test the factory by running the Spring Boot, and test using the postman.  After clicking “Send”, you will receive the response inside the postman
+
 ![alt](./image/17.PNG)
 
 ![alt](./image/19.PNG)
 
 
 F.The console output with both admin and member after postman:
+
 ![alt](./image/20.PNG)
-
-
->#### iii. ADAPTER
+># iii. ADAPTER
 Adapter pattern is about making two interfaces compatible, namely LineFormattable and CsvFormattable.
 
 A. Let’s create a package to hold all adapter related files since they are neither models or controllers.  First create the two interfaces, LineFormattable.java and CsvFormattable.java
+
 ![alt](./image/21.PNG)
 
 ![alt](./image/22.PNG)
@@ -142,13 +147,13 @@ E. After running the program, terminal or console should shows something like th
 
 ![alt](./image/27.PNG)
 
->#### iv. CHAIN OF RESPONSIBILITY (CoR)
+># iv. CHAIN OF RESPONSIBILITY (CoR)
 
--	CoR is excellent for handling dynamic request when the target handlers may not be known beforehand. 
+- CoR is excellent for handling dynamic request when the target handlers may not be known beforehand. 
 
--	Here, we will create a dispenser for drinks, which will handle request for changing coins for 10, 5, 2, and 1 baht coins
+- Here, we will create a dispenser for drinks, which will handle request for changing coins for 10, 5, 2, and 1 baht coins
 
-- Create a package for holding all related files
+Create a package for holding all related files
 
 A. Create a class for Currency.java
 
@@ -170,7 +175,7 @@ E. In VSCode, run the program or Application from Run option. Try entering diffe
 
 ![alt](./image/32.PNG)
 
->#### v. COMMAND
+># v. COMMAND
 -	Command pattern is useful when implementing “actions” oriented program
 -	Here I have implement simple commands for players, including attack, block, and counter
 
