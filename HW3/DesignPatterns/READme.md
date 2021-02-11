@@ -169,3 +169,42 @@ D. Now, let’s define the order of chain, Create the DrinkDispenseChain.java an
 E. In VSCode, run the program or Application from Run option. Try entering different number to see output.
 
 ![alt](./image/32.PNG)
+
+>#### v. COMMAND
+-	Command pattern is useful when implementing “actions” oriented program
+-	Here I have implement simple commands for players, including attack, block, and counter
+
+**Create a package for holding all related files.**
+
+A. Create an interface ActionReceiver.java to impose the rule
+
+![alt](./image/33.PNG)
+
+B. Let’s create two concrete receivers, MageReceiver.java and SwordmanReceiver.java
+
+![alt](./image/34.PNG)
+![alt](./image/35.PNG)
+
+C. Then, let’s create some commands, starting with some interface called Command.java
+
+![alt](./image/36.PNG)
+
+D. Then add some commands AttackCommand.java, BlockCommand.java and CounterCommand.java. Follow the code as follow.
+
+![alt](./image/37.PNG)
+
+E. Then we create the Invoker.java who will execute the commands
+
+![alt](./image/38.PNG)
+
+F. Before running the program, let’s create a factory Factory.java for creating the desired receiver
+
+![alt](./image/39.PNG)
+
+G. Lastly, create a Main.java as follow:
+
+![alt](./image/41.PNG)
+
+H. Run the Main program and see the output like below when its "Mage"
+
+![alt](./image/40.PNG)
