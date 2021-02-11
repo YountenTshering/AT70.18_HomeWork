@@ -114,3 +114,30 @@ E.Test the factory by running the Spring Boot, and test using the postman.  Afte
 
 F.The console output with both admin and member after postman:
 ![alt](./image/20.PNG)
+
+
+>#### iii. ADAPTER
+Adapter pattern is about making two interfaces compatible, namely LineFormattable and CsvFormattable.
+
+A. Let’s create a package to hold all adapter related files since they are neither models or controllers.  First create the two interfaces, LineFormattable.java and CsvFormattable.java
+![alt](./image/21.PNG)
+
+![alt](./image/22.PNG)
+
+B. Then create two concrete classes NewLineFormatter.java and CsvFormatter.java that implements the interfaces
+
+![alt](./image/23.PNG)
+
+![alt](./image/24.PNG)
+
+C. Now let’s make the adapter for CsvFormatter, so it can be used with the LineFormattable interface.  Create CsvAdapterImpl.java with the following code.
+
+![alt](./image/25.PNG)
+
+D. To demonstrate, under your Main program, try the following code:
+
+![alt](./image/26.PNG)
+
+E. After running the program, terminal or console should shows something like this at the end:
+
+![alt](./image/27.PNG)
