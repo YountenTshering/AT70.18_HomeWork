@@ -2,6 +2,7 @@ package com.example.SpringSecurity.service;
 
 import com.example.SpringSecurity.dao.UserJPADao;
 import com.example.SpringSecurity.model.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -15,32 +16,35 @@ public class UserServiceImpl implements UserService {
     private UserJPADao userdao;
 
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private BCryptPasswordEncoder bCryptEncoder;
 
     @Autowired
     private EmailService emailService;
 
     @Override
     public void save(User user) {
-        String hashedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+        System.out.println("here");
+        String hashedPassword = bCryptEncoder.encode(user.getPassword());
         user.setPassword(hashedPassword);
         user.setActive(true);
         userdao.save(user);
 
-        // Successful registration -> Send emails
+        // successful registration -> send emails
         SimpleMailMessage emailMsg = new SimpleMailMessage();
         emailMsg.setTo(user.getEmail());
-        emailMsg.setText("You are registered");
+        emailMsg.setText("You are registered!");
         emailMsg.setSubject("Registration successful!");
         emailMsg.setFrom("admin@random.asia");
 
         try {
             emailService.sendEmail(emailMsg);
             System.out.println("successful");
+
         } catch (MailException ex) {
-            // Simply log it and go on...
+            // simply log it and go on...
             System.err.println(ex.getMessage());
         }
+
     }
 
     @Override

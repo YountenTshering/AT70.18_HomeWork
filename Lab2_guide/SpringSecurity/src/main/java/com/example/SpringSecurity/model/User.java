@@ -17,19 +17,18 @@ public class User {
     private int id;
 
     @Column(nullable = false) // database level
-    @NotBlank(message = "This field is required.") // UI level, no need to use JavaScript, Supported by validation
-                                                   // dependency
+    @NotBlank(message = "This field is required.")
+    // UI level, no need to use JavaScript, Supported by validation dependency
     private String username;
 
     @Column(nullable = false)
     @NotBlank(message = "This field is required.")
     private String password;
 
-    @Transient
     @NotBlank(message = "This field is required.")
+    @Transient
     private String passwordConfirm;
 
-    @Column(nullable = false)
     @NotBlank(message = "This field is required.")
     // in user interface level - valid email
     @Email(message = "Invalid Email")

@@ -31,13 +31,13 @@ public class UserDetailsImpl implements UserDetails {
         // We have to give authority based on roles
         // One user has many roles
         // Auth will have many auth so we must have auth.add
-        Set<GrantedAuthority> auth = new HashSet<>();
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
         for (Role role : user.getRoles()) {
-            auth.add(new SimpleGrantedAuthority(role.getName()));
+            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
         }
 
-        return auth;
+        return grantedAuthorities;
     }
 
     public int getID() {
