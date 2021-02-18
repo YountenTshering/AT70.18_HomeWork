@@ -24,13 +24,13 @@ For security, you can use fake stmp testing server by creating an account in mai
 
 Then, get the information from settings to use in application.properties.
 
-![alt](./image/1.png)
+![alt](./image/1.PNG)
 
 ># application.properties
 
 Next, set up the application.properties for your datasource, and smtp properties
 
-![alt](./image/2.png)
+![alt](./image/2.PNG)
 
 ># Adding models
 >## Inside src/main/java
@@ -50,7 +50,7 @@ If we use Spring Security, we have to use FetchType.EAGER.
 - @JsonBackReference specifies the child of the bidirectional relationship.  Without specifying this, there will be “Infinite Recursion Error”.
 - Set is more efficient for handling many to many association, but otherwise, use List
 
-![alt](./image/3.png)
+![alt](./image/3.PNG)
 
 2. Role.java
 - mappedBy = “roles” - The word “roles” refer to the object in the User.java.
@@ -58,11 +58,11 @@ mappedby tells JPA that it is already mapped, otherwise, you will get duplicate 
 - @Data - helper from lombok, giving us a lot of boiler codes such as getters, setters, toString, etc.
 - A trivial, if you don’t like the name that JPA gives you for the middle table, you can use @JoinTable to specify the exact name you like, as well as the column name.
 
-![alt](./image/4.png)
+![alt](./image/4.PNG)
 
 After this, we can run the project and see that default login page will appear but h2 will not work.
 
-![alt](./image/5.png)
+![alt](./image/5.PNG)
 
 Before we can actually see what kind of tables that Spring creates for us, we need to set our dao and security, since now h2-console will be blocked by Spring security, so we need to write some exceptions, and that security requires dao.  So let’s add dao, then security.
 ># Adding daos
@@ -72,16 +72,16 @@ Before we can actually see what kind of tables that Spring creates for us, we ne
 1. Create our JPA repository (DAO) for accessing info with the database.  Since we have two classes, we will have two JPADao classes.
 
 UserJPADao.java - note the use of RepositoryRestResource
-![alt](./image/6.png)
+![alt](./image/6.PNG)
 
 RoleJPADao.java
-![alt](./image/7.png)
+![alt](./image/7.PNG)
 
 2. Let’s populate our database with few roles using data.sql
 id is not needed since its auto generated
 Role prefix is important or needed
 
-![alt](./image/8.png)
+![alt](./image/8.PNG)
 
 ># Spring Security
 >## Inside src/main/java
@@ -89,7 +89,7 @@ Role prefix is important or needed
 Create our user login system using Spring Security. There are several files we need to create but once you make some sense, it is easy.
 We will create three class: SecurityConfig, MyUserDetailsService and UserDetailsImpl.
 
-![alt](./image/9.png)
+![alt](./image/9.PNG)
 
 Note:
 Authentication meaning login and logout.
@@ -100,26 +100,26 @@ Authorization meaning who can access which part.
 - Note we use BCryptPasswordEncoder().  By adding @Bean, it allows other classes to use it as @Autowired.  The difference between @Bean and @Component is that @Bean is method level while @Component is class level.
 - MyUserDetailsService is a UserDetailsService interface implementation which provides service access to user details
 - Notice that the access control is also implemented here, which the code is quite self-explanatory.
-![alt](./image/10.png)
+![alt](./image/10.PNG)
 
 2. MyUserDetailsService.java - this provides a simple api for loading users
 
 - Note that this is simply a @Service.  The main implementation is done in UserDetailsImpl.java which implements UserDetails
 - For those who are curious what @Service is for, @Repository, @Service, @Controller are all synonyms. They are all just specializations of @Component annotation. So, generally, they can be used one instead of the other.  HOWEVER, it is also possible that @Repository, @Service, and @Controller may carry additional semantics in future releases of the Spring Framework. Thus, if you are choosing between using @Component or @Service for your service layer, @Service is clearly the better choice
 
-![alt](./image/11.png)
+![alt](./image/11.PNG)
 
 3. UserDetailsImpl.java - this contains concrete implementation of how the users will be created with authorities and will feed the user back to MyUserDetailsService.java
 
 Implement all the Override by using alt+shift+enter.
 
-![alt](./image/12.png)
+![alt](./image/12.PNG)
 
 Generally, the app will talk to SecurityConfig.java, which talk to MyUserDetailsService.java to find the users  (also perform null check), and construct the concrete users logic in UserDetailsImpl which embed user with authorities and other attributes. 
 
 At this point, you should be able to launch the app, and go to h2-console, and see how the table looks.  Also you will find that any URL will be directed to /login page.  Also attempt to remove “mappedBy” and relaunch the app, and see how the table looks so you can understand what “duplicate” tables mean.
   
-![alt](./image/13.png)
+![alt](./image/13.PNG)
 ># Adding UserService
 
 Before we actually create the login/logout/register page, let’s make some helper service so we can easily save users.
@@ -135,25 +135,25 @@ B.	EmailServiceImpl.java
 
 1.	UserService.java - simply an interface defining user services
 
-![alt](./image/14.png)
+![alt](./image/14.PNG)
 
 2.	UserServiceImpl.java - a service helper to give us utility function related to users
 
 - Notice that we have @EmailService that notify users of successful registration.  We shall add this shortly.
 - Also note that before we save, we encode our password using our autowired bcrypt password encoder.
 
-![alt](./image/14a.png)
+![alt](./image/14a.PNG)
 
 Adding EmailService
 1.	Doing email service is straightforward in Spring. Let’s first make the interface EmailService.java
 
-![alt](./image/15.png)
+![alt](./image/15.PNG)
 
 2.	Here is the concrete implementation - EmailServiceImpl.java
 
 - ${spring} variable ties to application.properties
 
-![alt](./image/16.png)
+![alt](./image/16.PNG)
 
 ># Adding custom validations and error messages
 >##  Inside src/main/java 
@@ -164,7 +164,7 @@ Create package called validation and add one class.
 
 - Code is mostly self-explanatory.  Note “size.user.username”, “duplicate.user.username”, etc - these specify the message identifier which will be tied to a file specifying the error messages.
 
-![alt](./image/17.png)
+![alt](./image/17.PNG)
 
 2.	To support custom error messages that are specified in the Validator, we first need to tell Spring Boot where we're going to specify our error messages.
 
@@ -172,11 +172,11 @@ Here we shall create package (inside src/main/java) and create a configuration f
 
 - @Configuration - make sure this file will be run as configuration at runtime
 
-![alt](./image/18.png)
+![alt](./image/18.PNG)
 
 3.	Create messages.properties inside resources
 
-![alt](./image/19.png)
+![alt](./image/19.PNG)
 
 ># Adding controller
 >## Inside src/main/java 
@@ -216,7 +216,7 @@ Adding views are quite straightforward.  Here we shall use jsp tagging.  Most co
 
 ># Here is the overview of the work:
 
-![alt](./image/25.png)
-![alt](./image/26.png)
+![alt](./image/25.PNG)
+![alt](./image/26.PNG)
 
 ># Output of Spring Security:
