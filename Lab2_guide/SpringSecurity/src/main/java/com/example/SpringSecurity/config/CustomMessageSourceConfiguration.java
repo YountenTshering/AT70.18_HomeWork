@@ -1,4 +1,4 @@
-package com.example.SpringSecurity.validation;
+package com.example.SpringSecurity.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

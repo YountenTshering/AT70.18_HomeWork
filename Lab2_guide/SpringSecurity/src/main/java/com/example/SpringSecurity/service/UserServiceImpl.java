@@ -1,13 +1,13 @@
 package com.example.SpringSecurity.service;
 
-import com.example.SpringSecurity.dao.UserJPADao;
-import com.example.SpringSecurity.model.User;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.example.SpringSecurity.dao.UserJPADao;
+import com.example.SpringSecurity.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {

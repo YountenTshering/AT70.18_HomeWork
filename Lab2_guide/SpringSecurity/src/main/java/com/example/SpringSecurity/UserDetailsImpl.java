@@ -1,14 +1,15 @@
-package com.example.SpringSecurity.security;
-
-import com.example.SpringSecurity.model.Role;
-import com.example.SpringSecurity.model.User;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+package com.example.SpringSecurity;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.example.SpringSecurity.model.Role;
+import com.example.SpringSecurity.model.User;
 
 public class UserDetailsImpl implements UserDetails {
     // Who will use this?
