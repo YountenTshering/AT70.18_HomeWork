@@ -1,6 +1,8 @@
 package com.example.SpringSecurity.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +19,8 @@ import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class User {
 
     @Id // Primary Key
@@ -29,8 +32,8 @@ public class User {
     // UI level, no need to use JavaScript, Supported by validation dependency
     private String username;
 
-    @Column(nullable = false)
     @NotBlank(message = "This field is required.")
+    @Column(nullable = false)
     private String password;
 
     @NotBlank(message = "This field is required.")

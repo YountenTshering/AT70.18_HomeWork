@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(User user) {
-        System.out.println("here");
+        System.out.println("Added in h2");
         String hashedPassword = bCryptEncoder.encode(user.getPassword());
         user.setPassword(hashedPassword);
         user.setActive(true);
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 
         try {
             emailService.sendEmail(emailMsg);
-            System.out.println("successful");
+            System.out.println("successful registered");
 
         } catch (MailException ex) {
             // simply log it and go on...

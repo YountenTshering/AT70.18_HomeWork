@@ -5,13 +5,13 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home page</title>
+<title>Home Page</title>
 </head>
 </head>
 <body>
-<h1>User Roles</h1>
+<h1>User Role Details</h1>
 
-<h3>Your roles</h3>
+<h3>You are login and your roles:</h3>
 <c:forEach var="role" items="${user.roles}">
     <li><c:out value="${role.name}" /><br/></li>
 </c:forEach>

@@ -19,7 +19,7 @@ import com.example.SpringSecurity.model.User;
 public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserJPADao userDao;
+    UserJPADao userDao;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

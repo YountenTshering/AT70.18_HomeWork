@@ -35,15 +35,15 @@ public class UserController {
         for (Role role : u.getRoles()) {
             if (role.getName().equalsIgnoreCase("ROLE_ADMIN")) {
                 // do something
-                System.out.println("ADMIN");
+                System.out.println("ADMIN is login");
             }
             if (role.getName().equalsIgnoreCase("ROLE_USER")) {
                 // do something
-                System.out.println("USER");
+                System.out.println("USER is login");
             }
             if (role.getName().equalsIgnoreCase("ROLE_PREMIUM_USER")) {
                 // do something
-                System.out.println("PREMIUM USER");
+                System.out.println("PREMIUM USER is login");
             }
         }
         return mv;
@@ -62,9 +62,7 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             return "register.jsp";
         }
-
         userService.save(user);
-
         return "login.jsp";
     }
 
