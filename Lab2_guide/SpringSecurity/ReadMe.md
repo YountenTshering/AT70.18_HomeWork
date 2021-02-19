@@ -220,3 +220,47 @@ Adding views are quite straightforward.  Here we shall use jsp tagging.  Most co
 ![alt](./image/26.PNG)
 
 ># Output of Spring Security:
+
+>### After running your project, we will see login form where we can login if we have registered.
+
+![alt](./image/30.PNG)
+
+>### Register form let us to register in system and then data will be save in H2.
+
+![alt](./image/31.PNG)
+
+![alt](./image/32.PNG)
+
+>### After giving the required information and submitting will let us direct login page.
+
+>### Following are some ways to test your successful registration.
+
+1. From terminal:
+
+![alt](./image/33.PNG)
+
+2. From H2 console:
+
+![alt](./image/34.PNG)
+
+3. From mailtrap:
+
+![alt](./image/39.PNG)
+
+>### If we can successful register and login then we will be able to see the "home page"
+
+![alt](./image/35.PNG)
+
+>### Some error messages or handle:
+
+1. From the validation, we see that we cannot register until we fullfill the requirement. Some are requried field with condition.
+
+![alt](./image/36.PNG)
+
+2.  We can have condition where username should not repeat in database and if there is already register name then we cannot register. Even the email should be valid.
+
+![alt](./image/37.PNG)
+
+3. When we enter confirm password, it should match with recent entered password.
+
+![alt](./image/38.PNG)
