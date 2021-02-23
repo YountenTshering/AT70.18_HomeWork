@@ -127,7 +127,7 @@ Create package controller
 - Checkrr.jsp
 - Showrr.jsp
 
-All the code are for above is found in : https://github.com/YountenTshering/AT70.18_HomeWork
+All the code are for above is found in : https://github.com/YountenTshering/AT70.18_HomeWork/tree/master/HW4_Domain_Model/DomainModelRR
 
 The whole directory structure is as follows:
 
