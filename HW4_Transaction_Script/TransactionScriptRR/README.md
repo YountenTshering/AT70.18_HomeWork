@@ -153,7 +153,7 @@ We will be making two helper classes - RevenueRecognitionFactory.java in factory
  
 ![alt](./image/23.PNG)
 
-All code found in: https://github.com/YountenTshering/AT70.18_HomeWork
+All code found in: https://github.com/YountenTshering/AT70.18_HomeWork/tree/master/HW4_Transaction_Script/TransactionScriptRR
 
 The directory structure will be like:
 
