@@ -8,6 +8,7 @@ Simple web application for revenue recognition. At the end Users should be able 
 **Two approaches:**
 
 **1. Transaction Script with Table Data Gateway**
+
 2. Domain Model with JPA
 
 ># PART 1: TRANSACTION SCRIPT
