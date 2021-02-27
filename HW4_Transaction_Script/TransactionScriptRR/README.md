@@ -2,10 +2,12 @@
 
 Simple web application for revenue recognition. At the end Users should be able to:
 
-1. add contract which would insert revenue recognition and 
-2. calculate recognized revenue as of some date
+1. add contract which would insert revenue recognition
+2. calculate recognized revenue as of some date (for monthly wises)
 
 **Two approaches:**
+
+> In this, I will be implementing the first approach.
 
 **1. Transaction Script with Table Data Gateway**
 
@@ -13,7 +15,7 @@ Simple web application for revenue recognition. At the end Users should be able 
 
 ># PART 1: TRANSACTION SCRIPT
 
->### Adding Dependencies
+>## Adding Dependencies
 
 1. Create your spring boot starter project with the following dependencies:
 
@@ -25,7 +27,7 @@ Simple web application for revenue recognition. At the end Users should be able 
 - H2 - in-memory database
 - Spring Web - provides controllers and MVC support
 
-2. Aside from these dependencies, make sure you install these additional dependencies from maven repositories:
+2. Aside from these dependencies, make sure we install these additional dependencies from maven repositories:
 
 ![alt](./image/2.PNG)
 
@@ -36,66 +38,64 @@ Simple web application for revenue recognition. At the end Users should be able 
 
 >### Inside application.properties
 
-Set up the application properties for your datasource
+Set up the application properties for our datasource
 
 ![alt](./image/3.PNG)
 
->### Create a Script Package inside src/main/java:
+>## Create a ***script*** Package inside src/main/java:
 
-1. First, create RevenueRecognitionScript.java
+1. First, create **RevenueRecognitionScript.java**
 
-2. Then, create our concrete implementation RevenueRecognitionScriptImpl.java
+2. Then, create our concrete implementation **RevenueRecognitionScriptImpl.java**
 
 - Note that we will be creating gateways
 - Also note that we are using money api (e.g., Monetary)
  
 ![alt](./image/4.PNG)
 
-> Add constructor:
+> **Add constructor:**
  
 ![alt](./image/5.PNG)
 
-> Add recognizedRevenue method:
+> **Add recognizedRevenue method:**
 
-- Note findByContract which we will be implement later on on our recognitionGateway
+- Note findByContract which we will be implementing later on our recognitionGateway
  
 ![alt](./image/6.PNG)
 
-> Add calculateRevenueRecognition method:
+> **Add calculateRevenueRecognition method:**
 
-- Note the use of factory to create suitable revenue recognition strategy (here we are not using any strategy pattern - see Domain Model part)
+- Note the use of factory to create suitable revenue recognition strategy *(here we are not using any strategy pattern - see Domain Model part)*
 
 ![alt](./image/7.PNG)
 
-> Add some basic insert functions:
+> **Add some basic insert functions:**
 
 ![alt](./image/8.PNG)
 
 ># Data Gateways:
 
->### Create a tablegateway package inside src/main/java:
+>## Create a **tablegateway** package inside src/main/java:
 
 1. Now let’s create data gateways.  
 
-- Note that my data gateways have many duplications that can be better refactored  
+> **AbstractTableDataGateway.java**
 
-> AbstractTableDataGateway.java
-
-- Note on DataSource which is provided by JDBC API and automatically search the database for you
+- Note on DataSource which is provided by JDBC API and automatically search the database for us
 
 ![alt](./image/9.PNG)
 
-> ProductTableDataGateway.java
+> **ProductTableDataGateway.java**
 
 - Annotation @Repository is used
 
 ![alt](./image/10.png)
 
-> ContractTableDataGateway.java
+> **ContractTableDataGateway.java**
 
 ![alt](./image/11.png)
 
-> RevenueRecognitionTableDataGateway.java
+> **RevenueRecognitionTableDataGateway.java**
 
 ![alt](./image/12.png)
 
@@ -106,11 +106,11 @@ We will be making two helper classes - RevenueRecognitionFactory.java in factory
 
 ![alt](./image/14.png)
  
->## Create a controller package inside src/main/java:
+>## Create a **controller** package inside src/main/java:
 
-1. Now we will be making two controllers - ScriptController.java which will handles business logic, while HomeController.java will be handling direct request from client
+1. Now we will be making two controllers - **ScriptController.java** which will handles business logic, while **HomeController.java** will be handling direct request from client
 
-> ScriptController.java
+> **ScriptController.java**
 
 - First, we will be autowiring our RevenueRecognitionScript which contains all our business logic, and our DollarHelper
  
@@ -124,7 +124,7 @@ We will be making two helper classes - RevenueRecognitionFactory.java in factory
  
 ![alt](./image/17.PNG) 
 
-> HomeController.java
+> **HomeController.java**
 
 - We shall create the HomeController which will render the web UI for users to interact, which the UI will in turn route the request to ScriptController.java
 - First, we will be autowiring some gateways so we can find some info to show to the web UI
@@ -141,25 +141,33 @@ We will be making two helper classes - RevenueRecognitionFactory.java in factory
 
 ># Views
 
-1. Last step, we shall create the jsp files.  Note that I am using jstl to render the objects pass from the controllers.  
+1. Last step, we shall create the jsp files.  Note we are using jstl to render the objects pass from the controllers.  
 Also note that you are required to include the “taglib” above the html for jstl to work
 
-> Home.jsp
+> **Home.jsp**
 
 ![alt](./image/21.PNG)
 
-> Checkrr.jsp
+> **Checkrr.jsp**
 
 ![alt](./image/22.PNG)
 
-> Showrr.jsp
+> **Showrr.jsp**
  
 ![alt](./image/23.PNG)
 
 All code found in: https://github.com/YountenTshering/AT70.18_HomeWork/tree/master/HW4_Transaction_Script/TransactionScriptRR
 
-The directory structure will be like:
+> The directory structure will be like:
 
 ![alt](./image/24.PNG)
 
 ># Outcome of code:
+
+After running the projet we will be able to add contract which would insert revenue recognition and calculate recognized revenue for monthly basis.
+
+For more details on output follow **Domain Model with JPA**.
+
+Link: https://github.com/YountenTshering/AT70.18_HomeWork/tree/master/HW4_Domain_Model/DomainModelRR
+
+Next we will explore another approach: Domain Model with JPA
