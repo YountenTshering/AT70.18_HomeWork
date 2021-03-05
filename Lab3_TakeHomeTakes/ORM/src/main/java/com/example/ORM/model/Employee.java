@@ -64,9 +64,8 @@ public class Employee {
     // the one-to-many side only:.
     // When employee is removed, also remove addresses
     // @OneToMany(mappedBy = "emp")
-    @OneToMany(mappedBy = "emp", cascade = CascadeType.ALL, orphanRemoval = true)
-    // @OneToMany(fetch = FetchType.LAZY, mappedBy = "emp", cascade =
-    // CascadeType.ALL, orphanRemoval = true)
+    // @OneToMany(mappedBy = "emp", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "emp", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private List<Address> addresses;

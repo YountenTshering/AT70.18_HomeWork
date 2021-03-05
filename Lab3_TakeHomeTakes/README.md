@@ -1,23 +1,47 @@
 ># ORM, Hibernate, JPA, and Spring
 
-For setup follow the link:
+> For setup follow the link:
+
 https://github.com/YountenTshering/AT70.18_HomeWork/tree/master/Lab3_guide
 
 ># Take-home tasks
 
->## a. Set the employee cache to **20 seconds**, and run the test again.  Look at testCache.  What happens?  Document your findings.
-Set the cache time in ehcache.xml as follow:
+>## A. Set the employee cache to **20 seconds**, and run the test again.  Look at testCache.  What happens?  Document your findings.
+**Answer:**
+
+Set the cache time in **ehcache.xml** as follow:
 
 ![alt](ORM/image/6.PNG)
 
-We can notice that after the fetching, The testcache: does not load the entities since the cache time is more the sleep time (10 sec). Therefore, the cache is empty and entities are not loaded in cache.
+We can notice that after the fetching, it makes query and employee is in cache.
+The testcache: does not load the entities after 10 seconds (sleep time) since it is still in cache.
+
+Since the cache time is more than sleep time (10 sec). Therefore, the entities are not loaded in cache and employee is still in the cache, so loads from cache without making Query.
 
 ![alt](ORM/image/7.PNG)
 
->## b. Attempt to change the code, so that User table has the **foreign key** of Employee
+>## B. Attempt to change the code, so that User table has the **foreign key** of Employee
+**Answer:**
+
+**Employee table Before Changing** - USER_ID as foreign key:
+
+![alt](ORM/image/10.PNG)
+
+**User table Before Changing**
+
+![alt](ORM/image/11.PNG)
 
 
->## c. Research and discuss the difference between **cascade.REMOVE and orphanRemoval=true** (use your own words)
+**User table After changing the code** - EMP_ID as foreign key
+
+![alt](ORM/image/13.PNG)
+
+**Employee table After changing the code**
+
+![alt](ORM/image/12.PNG)
+
+>## C. Research and discuss the difference between **cascade.REMOVE and orphanRemoval=true** (use your own words)
+**Answer:**
 
 **CascadeType.REMOVE** is a way to delete a child entity or entities whenever the deletion of its parent happens.
 **orphanRemoval=true** is delete orphaned entities from the database. An entity that is no longer attached to its parent is the definition of being an orphan.
@@ -29,18 +53,19 @@ reference from an owner object (e.g. Employee). If only cascade=CascadeType.REMO
 
 If User has one-to-many relation to Comment. If you are using cascade="remove", you can remove the reference for Comment from one User, and then attach that Comment to another User. When you persist them, they will be correctly saved. But if you are using orphanRemoval=true, even if you will remove given Comment from one User, and then attach to another User, this comment will be deleted during persist, because the reference has been deleted.
 
->## d. **Remove lazy load** from addresses and benefits, run the testFetch function. What happens?  Document your findings.
+>## D. **Remove lazy load** from addresses and benefits, run the testFetch function. What happens?  Document your findings.
+**Answer:**
 
 ![alt](ORM/image/1.PNG)
 
 There is no change in the output or while testfetch. Since the fetch and load is done within time to live.
 
-
->## e. **Remove cascade = cascadeType.ALL and orphanRemoval = true from benefits and addresses**, run the testCascadeRemove and testCascadePersist function.  What happens?  Document your findings.
+>## E. **Remove cascade = cascadeType.ALL and orphanRemoval = true from benefits and addresses**, run the testCascadeRemove and testCascadePersist function.  What happens?  Document your findings.
+**Answer:**
 
 ![alt](ORM/image/2.PNG)
 
-Application runs till persist and address.java throw exception
+Application runs till persist and address.java throw exception since table are linked.
 
 ![alt](ORM/image/3.PNG)
 Data in leave table is not inserted (testCreateLeave) since there was no relationship address.
@@ -52,10 +77,15 @@ Since the apllication ran till persist and didnot reached testCascadeRemove, the
 ![alt](ORM/image/5.PNG)
 
 
->## f. **Attempt to remove @Transactional** from any of the methods defined in the TestService.java.  There are some errors.  Explain why such an error happens.
+>## F. **Attempt to remove @Transactional** from any of the methods defined in the TestService.java.  There are some errors.  Explain why such an error happens.
+**Answer:**
 
+The @Transactional annotation is the metadata that specifies the semantics of the transactions on a method. We have two ways to rollback a transaction: declarative and programmatic. In the declarative approach, we annotate the methods with the @Transactional annotation.
 
->## g. Coding: **Transform** my main program test into unit test
+![alt](ORM/image/14.PNG)
 
+@Transactional will handle session automatically and when it is removed then it will happen like question E.
 
->## h. Coding: Attempt to extend the app so that user can apply sick leave or annual leave (do not make any fancy thing, simply add leave), and admin can approve leave.
+![alt](ORM/image/15.PNG)
+
+Data in leave table is not inserted (testCreateLeave) since the apllication ran till persist and didnot reached testCascadeRemove, the admin Younten is still inside the table.

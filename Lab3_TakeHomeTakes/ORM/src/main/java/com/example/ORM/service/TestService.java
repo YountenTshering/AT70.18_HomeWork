@@ -33,7 +33,7 @@ public class TestService {
         // after commit entity will become detached
     }
 
-    @Transactional // will handle session automatically
+    // @Transactional // will handle session automatically
     public void testFetch(int id) {
         System.out.println("-- Loading entities --");
         Employee employee = em.find(Employee.class, id);
@@ -109,14 +109,14 @@ public class TestService {
         LocalDate end = LocalDate.of(2018, 2, 15);
         Employee emp = em.find(Employee.class, id);
         switch (type) {
-            case SICK:
-                SickLeave sl = new SickLeave(emp, false, "Flu", start, end);
-                em.persist(sl);
-                break;
-            case ANNUAL:
-                AnnualLeave al = new AnnualLeave(emp, false, "Kids Time", start, end);
-                em.persist(al);
-                break;
+        case SICK:
+            SickLeave sl = new SickLeave(emp, false, "Flu", start, end);
+            em.persist(sl);
+            break;
+        case ANNUAL:
+            AnnualLeave al = new AnnualLeave(emp, false, "Kids Time", start, end);
+            em.persist(al);
+            break;
 
         }
 
