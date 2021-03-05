@@ -56,7 +56,7 @@ public class TestService {
     @Transactional
     public void testCascadePersist(int id) {
         Employee employee = new Employee();
-        Name name = new Name("Peter", "Shawn", "");
+        Name name = new Name("Young", "Lee", "");
         employee.setName(name);
         employee.setAge(35);
 
@@ -114,7 +114,7 @@ public class TestService {
                 em.persist(sl);
                 break;
             case ANNUAL:
-                AnnualLeave al = new AnnualLeave(emp, false, "Kids affairs", start, end);
+                AnnualLeave al = new AnnualLeave(emp, false, "Kids Time", start, end);
                 em.persist(al);
                 break;
 

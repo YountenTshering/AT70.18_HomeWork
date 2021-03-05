@@ -41,12 +41,12 @@ public class OrmApplication {
 		// testing cascade persist
 		System.out.println("----Testing Cascade Persist---");
 		ts.testCascadePersist(1);
-		System.out.println("----Try log in to H2 and try john with pwd of 1234.  See what has been persisted---");
+		System.out.println("----Try log in to H2 and try Jams with pwd of 1234.  See what has been persisted---");
 
 		// testing cascade remove
 		System.out.println("----Testing Cascade Remove---");
 		ts.testCascadeRemove(1);
-		System.out.println("----Try log in to H2 and try john with pwd of 1234.  See what has been deleted---");
+		System.out.println("----Try log in to H2 and try Jams with pwd of 1234.  See what has been deleted---");
 
 		// testing inheritances
 		System.out.println("----Testing Inheritances ---");
@@ -55,7 +55,7 @@ public class OrmApplication {
 		System.out.println("----Adding Annual Leave for employee with emp_user_id 1---");
 		ts.testCreateLeave(2, LeaveType.ANNUAL);
 		System.out.println(
-				"----Try log in to H2 and try john with pwd of 1234.  See what has been added in LEAVE table---");
+				"----Try log in to H2 and try Jams with pwd of 1234.  See what has been added in LEAVE table---");
 
 	}
 
