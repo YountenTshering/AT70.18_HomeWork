@@ -7,7 +7,7 @@ public enum LeaveType {
 
     LeaveType(String val) {
         if (!this.name().equals(val)) {
-            throw new IllegalArgumentException("Incorrect use of ELanguage");
+            throw new IllegalArgumentException("Incorrect use of Language");
         } else {
             this.val = val;
         }

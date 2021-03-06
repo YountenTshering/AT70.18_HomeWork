@@ -47,7 +47,7 @@ public class TestService {
     public void testCascadePersist(int id) {
         // Create a new employee and make it persist
         Employee employee = new Employee();
-        Name name = new Name("Peter", "Shawn", "");
+        Name name = new Name("Jon", "Son", "");
         employee.setName(name);
         employee.setAge(35);
 

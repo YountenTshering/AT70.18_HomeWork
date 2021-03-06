@@ -47,14 +47,6 @@ public class OrmApplicationTests {
 		ts.testCascadePersist(1);
 		System.out.println("----Try log in to H2 and try john with pwd of 1234.  See what has been persisted---");
 
-		/*
-		 * // Testing cascade remove
-		 * System.out.println("----Testing Cascade Remove---"); ts.testCascadeRemove(1);
-		 * System.out.
-		 * println("----Try log in to H2 and try john with pwd of 1234.  See what has been deleted---"
-		 * );
-		 */
-
 		// Testing inheritances
 		System.out.println("----Testing Inheritances ---");
 		System.out.println("----Adding Sick Leave for employee with emp_user_id 2---");
