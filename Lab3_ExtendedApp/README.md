@@ -20,7 +20,7 @@
 
 >## Admin power to view leave requests and approve the leave
 
-![alt](ORM/image/4.PNG)
+![alt](ORM/image/4.png)
 
 True for approved and false for not approved.
 
