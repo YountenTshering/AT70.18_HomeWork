@@ -30,7 +30,7 @@ public class RevenueRecognition {
     @Column(name = "recognizedOn", nullable = false)
     private LocalDate recognizedOn;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY) // lazy so no load till needed
     private Contract contract;
 
     @Column(name = "amount", precision = 10, scale = 2)
