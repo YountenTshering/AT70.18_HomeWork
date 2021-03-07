@@ -32,7 +32,6 @@ public class MyUserDetailsService implements UserDetailsService {
 
         return new UserDetailsImpl(user);
     }
-    // Provides com.example.Lab2_Guide.service
     // To SecurityConfig
     // For getting some user detail information
 
