@@ -45,12 +45,12 @@ public class Employee {
         this.name = name;
     }
 
-    public Gender getGender() {
-        return gender;
+    public String getGender() {
+        return gender.toString();
     }
 
-    public void setGender(Gender gender) {
-        this.gender = gender;
+    public void setGender(String gender) {
+        this.gender = Gender.valueOf(gender);
     }
 
     public String getAddress() {

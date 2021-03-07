@@ -15,5 +15,4 @@ public class User {
     private String name;
     private String nationality;
     private String email;
-
 }
