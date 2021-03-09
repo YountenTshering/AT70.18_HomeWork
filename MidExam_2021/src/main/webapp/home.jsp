@@ -7,7 +7,7 @@
     <title>Home Page</title>
   </head>
   <body>
-    <h2>Everybody's Home Page</h2>
+    <h2>Home Page</h2>
 
     <a href="admin">Admin Login</a>
     <br /><br />

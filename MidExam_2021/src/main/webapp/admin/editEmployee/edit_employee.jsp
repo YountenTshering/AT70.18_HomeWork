@@ -49,7 +49,7 @@
         name="birthday"
         type="date"
         id="birthday"
-        value="${Employee.birthday}"
+        value="${employee.birthday}"
       />
       <br />
       <br />

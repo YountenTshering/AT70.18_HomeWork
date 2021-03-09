@@ -70,7 +70,7 @@ public class UserController {
         return mv;
     }
 
-    // add course
+    // add user
     // @GetMapping("admin/addUser")
     @RequestMapping(path = "admin/addUser", method = RequestMethod.GET)
     public String show_add_user_form() {
@@ -94,19 +94,19 @@ public class UserController {
     // update employee
     // @GetMapping("admin/editEmployee/{employeeId}")
     @RequestMapping(path = "admin/editEmployee/{employeeId}", method = RequestMethod.GET)
-    public ModelAndView show_edit_course_form(@PathVariable("employeeId") int courseId) {
+    public ModelAndView show_edit_employee(@PathVariable("employeeId") int employeeId) {
 
-        Employee course = employeeService.findById(employeeId);
+        Employee emp = employeeService.findById(employeeId);
 
-        ModelAndView mv = new ModelAndView("edit_course.jsp");
-        mv.addObject("course", course);
+        ModelAndView mv = new ModelAndView("edit_user.jsp");
+        mv.addObject("employee", emp);
         mv.addObject("leve", Level.values());
         return mv;
     }
 
     // @PostMapping("/admin/editEmployee")
     @RequestMapping(path = "/admin/editEmployee", method = RequestMethod.POST)
-    public String show_edit_course_form(Employee employee) {
+    public String edit_employee(Employee employee) {
 
         employeeService.save(employee);
 
@@ -116,7 +116,7 @@ public class UserController {
     // Admin sent mail to user for update
     // @PostMapping("admin/sendMail/{userId}")
     @RequestMapping(path = "admin/sendMail/{userId}", method = RequestMethod.POST)
-    public String send_mail(@PathVariable("userId") int userId, @PathVariable("employeeId") int courseId) {
+    public String send_mail(@PathVariable("userId") int userId, @PathVariable("employeeId") int employeeId) {
 
         User user = userService.findById(userId);
         Employee employee = employeeService.findById(employeeId);

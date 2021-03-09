@@ -20,7 +20,7 @@ Generated project from https://start.spring.io/
 5. **Java Mail Sender** → simple api for sending email 
 6. **Spring Security** → provides built-in authentication/authorization
 7. **Rest Repositories** → provides automatic restful controllers
-8. **Validation** → provides table validation such as @Email
+8. **Validation** → provides table validation such as @Email (Not Used)
 
 >### Aside from these dependencies, make sure you install these additional dependencies from maven repositories:
 
@@ -29,22 +29,21 @@ Generated project from https://start.spring.io/
 - **JSTL** → a jsp tagging library for looping, conditional logic
 - **Money-api and moneta** → for working with currency file
 
+
+Questions Answered: 
+- Have touched every questions.
+- Admin login worked **(Password is 1234)** but after employee integration everything is different.
+- Model created with relationships.
+- Admin logic to add and edit user/employee.
+- Update or date(DOB) logic in admin edit tried with local date converter.
+- For calculating salary- only dependencies and helper created to start with.
+
 Method applied to do the exam:
 1. Start with model
 2. dao or repo
 3. services 
 4. localconverter 
 5. controller and view
+I tried my level best to perform in this manner but its hard to slove issues or debug. Will learn  through experience.
 
-Questions Answered: 
-
-- Admin login worked but after employee integration everything is different. 
-- Model created
-- Admin logic to add and edit user/employee
-- Update or date(DOB) logic in admin edit tried with local date converter.
-- For calculating salary- only dependencies and helper created to start with.
-
-
-
-
-#----------------------Thank You------------------------
+-------------------------------Thank You-------------------------------------
