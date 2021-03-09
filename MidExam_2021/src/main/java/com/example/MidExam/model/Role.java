@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Data
-@Table(name = "role") // giving our own table name
+@Table(name = "role")
 public class Role {
 
     @Id
@@ -22,7 +22,6 @@ public class Role {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
-    // mapped by required so that it understands that this field is already mapped
-    // before
+
     private Set<User> users;
 }

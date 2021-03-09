@@ -48,10 +48,10 @@ public class Employee {
     private Date birthday_;
 
     @Transient
-    private Monetary revenueGenerated;
+    private Monetary baseSalary;
 
-    @Column(name = "revenueGenerated", precision = 10, scale = 2)
-    private BigDecimal revenueGenerated_;
+    @Column(name = "Generated", precision = 10, scale = 2)
+    private BigDecimal baseSalary_;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "emp", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
@@ -64,6 +64,13 @@ public class Employee {
     private User user;
 
     public void setEmployee(List<User> users) {
+    }
+
+    public Date getDOB_() {
+        return null;
+    }
+
+    public void setDOB(LocalDate convertToEntityAttribute) {
     }
 
 }

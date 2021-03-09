@@ -41,6 +41,9 @@ public class User {
     @Column(nullable = false)
     private String role;
 
+    @Column(nullable = false)
+    private String email;
+
     private boolean active;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

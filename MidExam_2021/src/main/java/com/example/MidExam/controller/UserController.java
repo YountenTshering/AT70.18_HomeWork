@@ -62,10 +62,10 @@ public class UserController {
     @RequestMapping(path = "admin/viewUserEdit", method = RequestMethod.GET)
     public ModelAndView admin_viewUserEdit() {
 
-        List<Employee> allCourses = EmailService.getEmpolyee();
+        List<Employee> allEmployees = EmailService.getEmpolyee();
 
         ModelAndView mv = new ModelAndView("viewUserEdit.jsp");
-        mv.addObject("viewUserEdit", allCourses);
+        mv.addObject("viewUserEdit", allEmployees);
 
         return mv;
     }
@@ -85,11 +85,6 @@ public class UserController {
         employee.setDOB(converter.convertToEntityAttribute(employee.getDOB_()));
 
         User currentUser = userService.findByUsername(principal.getName());
-        List<User> users = List.of(currentUser);
-        employee.setEmployee(users);
-
-        List<employee> employee = List.of(employee);
-        currentUser.setEmployees(employee);
 
         employeeService.save(employee);
 
@@ -124,7 +119,7 @@ public class UserController {
     public String send_mail(@PathVariable("userId") int userId, @PathVariable("employeeId") int courseId) {
 
         User user = userService.findById(userId);
-        employee course = employeeService.findById(courseId);
+        Employee employee = employeeService.findById(employeeId);
 
         SimpleMailMessage emailMsg = new SimpleMailMessage();
         emailMsg.setTo(user.getEmail());
