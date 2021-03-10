@@ -17,55 +17,53 @@ Generated project from https://start.spring.io/
 - Lombok
 - Spring Data JPA
  
-![alt](/NoteTaking/image/1.PNG)
+![alt](./image/1.PNG)
 
 Coordinates for core library:
 
-![alt](/NoteTaking/image/4.PNG)
+![alt](./image/4.PNG)
 
 ># application.properties
 
 In the **application.properties**, add:
 
-![alt](/NoteTaking/image/2.PNG)
+![alt](./image/2.PNG)
  
 ># Models
 
 Let’s create an entity called **Note.java**
 
-![alt](/NoteTaking/image/3.PNG)
+![alt](./image/3.PNG)
 
 ># Controllers
 
 1. Let’s create controller which has method to retrieve all notes (the **reverse method** is for showing the most recent one first)
 
-![alt](/NoteTaking/image/5.PNG)
+![alt](./image/5.PNG)
 
-2. Let’s also create method for **saving notes**
+1. Let’s also create method for **saving notes**
 
-![alt](/NoteTaking/image/6.PNG)
+![alt](./image/6.PNG)
 
-3. We shall also create a route for **invoking** the get and save method.  Here is the full implementation of the controller
+1. We shall also create a route for **invoking** the get and save method.  Here is the full implementation of the controller
 
-![alt](/NoteTaking/image/7.PNG)
+![alt](./image/7.PNG)
 
 ># Views
 
 1. **Add the index.html in src/main/resources/templates** and run the Spring Boot app.  Now we should be able see notes to save.
 
-![alt](/NoteTaking/image/8.PNG)
+![alt](./image/8.PNG)
 
 ># index page
-![alt](/NoteTaking/image/9.PNG)
+![alt](./image/9.PNG)
 
 ># output:
 
 When you run the app, you should be **able to save notes into the database**:
 
-![alt](/NoteTaking/image/10.PNG)
+![alt](./image/10.PNG)
 
 ># Database after saving the note:
 
-![alt](/NoteTaking/image/11.PNG)
-
-
+![alt](./image/11.PNG)
