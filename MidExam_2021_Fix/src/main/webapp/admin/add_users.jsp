@@ -13,7 +13,7 @@
     <a href="logout">Logout</a>
     <br />
     <br /><br />
-    <form method="post" action="admin/addUser">
+    <form method="post" action="addUser">
       <label for="name">Name</label>
       <input name="name" type="text" id="name" required />
       <br /><br />

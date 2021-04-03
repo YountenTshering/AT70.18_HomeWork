@@ -12,7 +12,7 @@
 
     <br />
 
-    <form method="post" action="editemployee">
+    <form method="post" action="/admin/editEmployee">
       <label for="Id">User ID</label>
       <input name="id" type="text" id="Id" readonly value="${employee.id}" />
       <br /><br />
@@ -30,7 +30,7 @@
       <label for="level">Level</label>
 
       <select name="level" id="level">
-        <c:forEach items="${level}" var="level">
+        <c:forEach items="${levels}" var="level">
           <c:choose>
             <c:when test="${employee.level == level}">
               <option value="${level}" selected="selected">${level}</option>

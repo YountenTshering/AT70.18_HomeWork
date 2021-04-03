@@ -22,7 +22,7 @@ Generated project from https://start.spring.io/
 7. **Rest Repositories** → provides automatic restful controllers
 8. **Validation** → provides table validation such as @Email (Not Used)
 
->### Aside from these dependencies, make sure you install these additional dependencies from maven repositories:
+>### Aside from these dependencies, make sure to install these additional dependencies from maven repositories:
 
 - **Tomcat jasper** → allows us to work with .jsp files.
 - **Jackson dataformat xml** → allows our RESTful API to work with XML, instead of only json files
@@ -32,7 +32,7 @@ Generated project from https://start.spring.io/
 
 Questions Answered: 
 - Have touched every questions.
-- Admin login worked **(Password is 1234)** but after employee integration everything is different.
+- Admin login worked **(Username: Younten, Password is 1234)** 
 - Model created with relationships.
 - Admin logic to add and edit user/employee.
 - Update or date(DOB) logic in admin edit tried with local date converter.

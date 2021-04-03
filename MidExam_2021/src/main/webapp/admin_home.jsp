@@ -26,7 +26,9 @@
     <tr>
         <th scope="col">Employee ID</th>
         <th scope="col">Name</th>
+        <th scope="col">Level</th>
         <th scope="col">Action</th>
+        
 
     </tr>
     </thead>
@@ -34,13 +36,13 @@
     <c:forEach items="${users}" var="user">
         <tr>
             <th scope="row">${user.id}</th>
-            <td>${user.username}</td>
-
+            <td>${user.emp.name}</td>
+            <th>${user.emp.level}</th>
             <td>
                 <form action="admin/sendMail/${user.id}" method="post" onclick="myFunction()">
-                            ${employee.name} <input type="submit" value="Send Mail">
+                             <input type="submit" value="Send Mail">
                     </form>
-                </c:forEach>
+                
             </td>
             <td>
             </td>

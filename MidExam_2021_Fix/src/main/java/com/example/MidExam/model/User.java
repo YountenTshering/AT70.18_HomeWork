@@ -49,12 +49,15 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Employee emp;
 
-    // @ManyToMany(fetch = FetchType.EAGER)
-    // @JsonBackReference
-    // private Set<Role> roles;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JsonBackReference
+    private Set<Role> roles;
 
-    public void setEmployee(Employee employee) {
+    public String getEmail() {
+        return null;
+    }
 
+    public void setEmployees(List<Employee> employee) {
     }
 
 }

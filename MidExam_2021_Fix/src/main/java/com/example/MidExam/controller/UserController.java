@@ -62,10 +62,10 @@ public class UserController {
     @RequestMapping(path = "admin/viewUserEdit", method = RequestMethod.GET)
     public ModelAndView admin_viewUserEdit() {
 
-        List<Employee> allEmployees = employeeService.getAllEmployees();
+        List<Employee> allEmployees = EmailService.getEmpolyee();
 
-        ModelAndView mv = new ModelAndView("viewUsersEdit.jsp");
-        mv.addObject("employees", allEmployees);
+        ModelAndView mv = new ModelAndView("viewUserEdit.jsp");
+        mv.addObject("viewUserEdit", allEmployees);
 
         return mv;
     }
@@ -74,7 +74,7 @@ public class UserController {
     // @GetMapping("admin/addUser")
     @RequestMapping(path = "admin/addUser", method = RequestMethod.GET)
     public String show_add_user_form() {
-        return "add_users.jsp";
+        return "add_User.jsp";
     }
 
     // @PostMapping("admin/addUser")
@@ -98,28 +98,28 @@ public class UserController {
 
         Employee emp = employeeService.findById(employeeId);
 
-        ModelAndView mv = new ModelAndView("edit_employee.jsp");
+        ModelAndView mv = new ModelAndView("edit_user.jsp");
         mv.addObject("employee", emp);
-        mv.addObject("levels", Level.values());
+        mv.addObject("leve", Level.values());
         return mv;
     }
 
     // @PostMapping("/admin/editEmployee")
-    @RequestMapping(path = "admin/editEmployee", method = RequestMethod.POST)
-    public ModelAndView edit_employee(Employee employee) {
+    @RequestMapping(path = "/admin/editEmployee", method = RequestMethod.POST)
+    public String edit_employee(Employee employee) {
 
         employeeService.save(employee);
 
-        return new ModelAndView("redirect:/admin/viewUserEdit");
+        return "ok";
     }
 
     // Admin sent mail to user for update
     // @PostMapping("admin/sendMail/{userId}")
     @RequestMapping(path = "admin/sendMail/{userId}", method = RequestMethod.POST)
-    public String send_mail(@PathVariable("userId") int userId) {
+    public String send_mail(@PathVariable("userId") int userId, @PathVariable("employeeId") int employeeId) {
 
         User user = userService.findById(userId);
-        // Employee employee = employeeService.findById(employeeId);
+        Employee employee = employeeService.findById(employeeId);
 
         SimpleMailMessage emailMsg = new SimpleMailMessage();
         emailMsg.setTo(user.getEmail());

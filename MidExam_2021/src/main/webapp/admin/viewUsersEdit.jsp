@@ -10,7 +10,7 @@
 <body>
 <h3>User Management</h3>
 
-<a href="adduser">Add Employee</a>
+<a href="/admin/addUser">Add Employee</a>
 
 <br><br>
 <a href="logout">Logout</a>
@@ -28,14 +28,14 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${employee}" var="employee">
+    <c:forEach items="${employees}" var="employee">
         <tr>
             <th scope="row">${employee.id}</th>
             <td>${employee.name}</td>
             <td>${employee.level}</td>
-            <td>${employee.DOB}</td>
+            <td>${employee.birthday}</td>
             <td>
-                <form action="editEmployee/${employee.id}" method="get">
+                <form action="/admin/editEmployee/${employee.id}" method="get">
                     <input type="submit" value="Edit">
                 </form>
             </td>
