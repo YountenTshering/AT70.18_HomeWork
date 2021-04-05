@@ -1,0 +1,2 @@
+insert into user (username, password, active, role, email) values ('Younten', '$2y$10$uwslZFS.czXR6VE7XzyBTuH.xGtdDmBBnioj2J/KZqJr0cHDEr3fa', true, 'ROLE_ADMIN', 'younten@ait.asia');
+insert into user (username, password,  active, role, email) values ('Tshering', '$2y$10$uwslZFS.czXR6VE7XzyBTuH.xGtdDmBBnioj2J/KZqJr0cHDEr3fa', true, 'ROLE_USER', 'tshering@ait.asia');
