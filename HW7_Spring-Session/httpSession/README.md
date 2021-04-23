@@ -118,3 +118,7 @@ We will be using Spring Session JDBC to store spring session information. By def
 ![alt](./image/21.PNG)
 
 ![alt](./image/22.PNG)
+
+># For the Assignment, please follow the link to see application connect to a Redis and store the session:
+
+https://github.com/YountenTshering/AT70.18_HomeWork/tree/master/HW7_Spring-Session/SessionWthRedis
