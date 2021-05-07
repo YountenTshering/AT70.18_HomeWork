@@ -1,11 +1,5 @@
 ># Software Architecture Design - 2021
 
-```
-Name: Younten Tshering
-Student ID: 121334
-```
-No Architecture is best. (Drawbacks should be accepted and have to prioritize certain quality)
-
 >## Mid-Exam Submission 
 
 For the exam, I have tried to **increase cohesion** (by separating based on responsibilities) and **reduce coupling** (by using design patterns and refactoring)
@@ -37,13 +31,4 @@ Questions Answered:
 - Admin logic to add and edit user/employee.
 - Update or date(DOB) logic in admin edit tried with local date converter.
 - For calculating salary- only dependencies and helper created to start with.
-
-Method applied to do the exam:
-1. Start with model
-2. dao or repo
-3. services 
-4. localconverter 
-5. controller and view
-I tried my level best to perform in this manner but its hard to slove issues or debug. Will learn  through experience.
-
 -------------------------------Thank You-------------------------------------
