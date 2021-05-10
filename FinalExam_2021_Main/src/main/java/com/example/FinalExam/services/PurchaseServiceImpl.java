@@ -43,20 +43,54 @@ public class PurchaseServiceImpl implements PurchaseService {
             save(newBid, new.getProduct(), new.getUser());
         }
     }
+}
 
-    @Override
     @Transactional
     @Async
-    public void purchaseProductWriteLock(String threadNo, int productID, String amount) throws InterruptedException {
+    public void readLockTransaction() throws InterruptedException {
 
-        Product product2 = null;
+        System.out.println(LocalTime.now() + " <-- Reading Product entity -->");
 
+        Product product1 = null;
         try {
-            product2 = pDao.findProductForWrite(productID);
+            product1 = pDao.findProductForRead(1L);
         } catch (Exception e) {
-            
+            System.err
+                    .println(LocalTime.now() + " -- Got exception while " + "acquiring the read lock:\n " + e + " --");
+            return;
         }
 
-       }
+        System.out.println(LocalTime.now() + " -- Acquired the read lock --");
 
-}
+        System.out.println(LocalTime.now() + " -- Read product: " + product1 + " --");
+
+        // Thread.sleep(10000);
+
+        Thread.sleep(2000);
+
+    }
+
+    @Transactional
+    @Async
+    public void writeLockTransaction() throws InterruptedException {
+
+        Thread.sleep(100);
+
+        System.out.println(LocalTime.now() + " <-- Writing Product entity -->");
+
+        Product product2 = null;
+        try {
+            product2 = pDao.findProductForWrite(1L);
+        } catch (Exception e) {
+            System.err
+                    .println(LocalTime.now() + " -- Got exception while " + "acquiring the write lock:\n " + e + " --");
+            return;
+        }
+
+        System.out.println(LocalTime.now() + " -- Acquired write lock --");
+        product2.setName("New name");
+        pDao.save(product2);
+
+        System.out.println(LocalTime.now() + " -- User 2 updated product: " + product2 + " --");
+    }
+}}

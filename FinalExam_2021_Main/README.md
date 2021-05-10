@@ -58,15 +58,15 @@ For the exam, I have tried to **increase cohesion** (by separating based on resp
 
 > **Questions Answered:** 
 
-Extra work: Spring Security with admin user and Company since I made ready.
+Extra work: Spring Security with admin user and Company since I was interested to do it.
 Credentials used in exam, every password is "**1234**"
 
 - Have touched every questions.
 - Model(Product, Company and Category) created with relationships.
 - Created a simple buy page.
-- Pessimistic and optimistic locking tried with write lock and version.
-- Unit test demonstrated by Junit test concept used in singleton.(Did not finished- give some Assertions error false)
-
+- Pessimistic and optimistic locking tried with read and write lock and version in **PurchaseServiceImpl** but gave error and had less time slove and do it. 
+- Unit test demonstrated by Junit test concept used in singleton.(Did not finished- give some Assertions error false and project gave error with compilation )
+- Finally the locking and testing concept were applied from lab and project work.
 
 > Method applied to do the exam:
 

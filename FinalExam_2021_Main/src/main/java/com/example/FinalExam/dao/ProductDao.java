@@ -15,9 +15,9 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
 
     // @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select p from Product p where p.id = :id")
-    Product findProductForWrite(@Param("id") int id);
+    Product findProductForWrite(@Param("id") long l);
 
     @Lock(LockModeType.PESSIMISTIC_READ)
     @Query("select p from Product p where p.id = :id")
-    Product findProductForRead(@Param("id") int id);
+    Product findProductForRead(@Param("id") long l);
 }
